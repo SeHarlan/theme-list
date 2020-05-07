@@ -1,0 +1,49 @@
+.Results {
+  height: 100vh;
+  nav {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    box-sizing: content-box;
+    height: 1.5rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
+    border-radius: 1rem;
+    outline: none;
+    font-family: inherit;
+    color: inherit;
+    background-color: inherit;
+    font-size: 1rem;
+  }
+  div {
+    height: 2rem;
+  }
+  ul {
+    margin: 1rem 10vw;
+    height: 60vh;
+    overflow: scroll;
+    text-align: center;
+  }
+  li {
+    list-style: none;
+    margin: 0 10vw 3rem 10vw;
+  }
+  button:hover {
+    box-shadow: 2px 2px 2px grey;
+    transform: translate(0, -2px);
+    cursor: pointer;
+  }
+  button:active {
+    box-shadow: 0 0 0;
+    transform: translate(0, 0px);
+  }
+  button:disabled {
+    box-shadow: 0 0 0;
+    transform: translate(0, 0);
+    cursor: inherit;
+  }
+}

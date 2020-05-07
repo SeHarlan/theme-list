@@ -21,7 +21,7 @@ export const RickMortyProvider = ({ children }) => {
         setDeadCharacters(dead);
         setTotalPages(totalPages);
       });
-  }, []);
+  }, [page]);
 
   return (
     <RickMortyContext.Provider value={{
