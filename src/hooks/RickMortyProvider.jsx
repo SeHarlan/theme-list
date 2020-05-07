@@ -1,17 +1,18 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import fetchCharacters from '../services/rickMorty';
+import { fetchCharacters } from '../services/rickMorty';
 
 const RickMortyContext = createContext();
 
-const RickMortyProvider = ({ children }) => {
+export const RickMortyProvider = ({ children }) => {
   const [aliveCharacters, setAliveCharacters] = useState([]);
   const [deadCharacters, setDeadCharacters] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(25);
+  const [theme, setTheme] = useState('Alive');
 
-  const incPage = setPage(prev => prev + 1);
-  const decPage = setPage(prev => prev - 1);
+  const incPage = () => setPage(prev => (prev + 1));
+  const decPage = () => setPage(prev => (prev - 1));
 
   useEffect(() => {
     fetchCharacters(page)
@@ -20,10 +21,16 @@ const RickMortyProvider = ({ children }) => {
         setDeadCharacters(dead);
         setTotalPages(totalPages);
       });
-  }, [page]);
+  }, []);
 
   return (
-    <RickMortyContext.Provider value={{ aliveCharacters, deadCharacters, paging: { page, totalPages, incPage, decPage } }}>
+    <RickMortyContext.Provider value={{
+      aliveCharacters, 
+      deadCharacters, 
+      theming: { theme, setTheme }, 
+      paging: { decPage, incPage, page, totalPages }
+    }}
+    >
       {children}
     </RickMortyContext.Provider>
   );
@@ -31,14 +38,16 @@ const RickMortyProvider = ({ children }) => {
 
 RickMortyProvider.propTypes = { children: PropTypes.node };
 
-export default RickMortyProvider;
-
 export const useCharacters = () => {
-  const { aliveCharacters, deadCharacters } = useContext(RickMortyProvider);
-  return { aliveCharacters, deadCharacters };
+  const { aliveCharacters, deadCharacters } = useContext(RickMortyContext);
+  return { aliveCharacters, deadCharacters }; 
 };
 
 export const usePaging = () => {
-  const { paging } = useContext(RickMortyProvider);
+  const { paging } = useContext(RickMortyContext);
   return paging;
+};
+export const useTheming = () => {
+  const { theming } = useContext(RickMortyContext);
+  return theming;
 };

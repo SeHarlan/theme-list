@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results component renders Results 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "aliveCharacters": Array [],
+      "deadCharacters": Array [],
+      "paging": Object {
+        "decPage": [Function],
+        "incPage": [Function],
+        "page": 1,
+        "totalPages": 25,
+      },
+      "theming": Object {
+        "setTheme": [Function],
+        "theme": "Alive",
+      },
+    }
+  }
+>
+  <Results />
+</ContextProvider>
+`;
