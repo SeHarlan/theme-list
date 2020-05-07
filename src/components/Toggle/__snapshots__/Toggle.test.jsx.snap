@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle component renders Toggle 1`] = `
+<section
+  className="Toggle"
+>
+  <input
+    checked={true}
+    id="toggle"
+    name="toggle"
+    type="checkbox"
+  />
+  <label
+    htmlFor="toggle"
+  />
+</section>
+`;

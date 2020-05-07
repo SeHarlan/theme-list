@@ -1,0 +1,36 @@
+.Toggle {
+  input {
+    display: none;
+  }
+  label {
+    display: block;
+    height: 1.5rem;
+    width: 3.1rem;
+    padding: 2px;
+    border-radius: 1.5rem;
+    border: 5px inset gray;
+    background-color: rgb(65, 75, 80);
+  }
+  label::before {
+    content: '';
+
+    display: block;
+    margin-top: -1px;
+    
+    height: 1.5rem;
+    width: 1.5rem;
+
+    background-color: grey;
+    border: 1px gray outset;
+    border-radius: 1.5rem;
+    transition: 0.3s;
+  }
+  input:checked + label {
+    background-color:  rgb(211, 217, 225);
+    border: 5px inset gold;
+    &::before {
+      margin-left: 1.5rem;
+      background-color: gold;
+    }
+  }
+}

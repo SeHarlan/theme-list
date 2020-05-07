@@ -1,0 +1,36 @@
+.DeadTheme {
+  background-color: black;
+  color: red;
+  ul {
+    border: 8px inset slategray;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  li {
+    border-bottom: 2px dashed slategray;
+  }
+  img {
+    border: 6px inset slategray;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  button {
+    border: 4px outset slategray;
+  }
+}
+.AliveTheme {
+  background-color: blanchedalmond;
+  color: skyblue;
+  ul {
+    border: 8px outset gold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  li {
+    border-bottom: 2px dashed gold;
+  }
+  img {
+    border: 6px outset gold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  button {
+    border: 4px outset gold;
+  }
+}
